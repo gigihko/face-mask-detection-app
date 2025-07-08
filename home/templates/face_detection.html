@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1 class="text-center"><b>Face Detection App</b></h1>
+                    <h6 class="text-center mt-2">Build with Django, OpenCV and VGG-19</h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="container-fluid">
+                        <div class="mb-3">
+                            <form action="detection_face" id="fileupload" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="col-md-4 col-sm-4">
+                                    <label for="filePath">Upload Image File Here:</label>
+                                </div>
+                                <input name="filePath" id="filePath" type="file"><br>
+                                <p id="file-warning" class="text-danger mt-2" style="display: none;">
+                                    ⚠️ Please choose an image file before submitting.
+                                </p>
+                                <br>
+                                <button type="submit" class="btn btn-primary" value="submit">Predict</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <h6 class="my-4">Original Image</h6>
+                    <div class="row">
+                        <img src="{{ filePathName }}" alt="original image" class="img-fluid">
+                    </div>
+
+                    <br>
+
+                    <h6 class="my-4">Face Detection Image</h6>
+                    <div class="row">
+                        {% if detection_url %}
+                            <img src="{{ detection_url }}" class="img-fluid" alt="Detected faces">
+                        {% else %}
+                            <p class="text-muted">No detection image found.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+    </div>
+</section>
+
+<!-- JavaScript Validation -->
+<script>
+    document.getElementById("fileupload").addEventListener("submit", function (event) {
+        const fileInput = document.getElementById("filePath");
+        const warningText = document.getElementById("file-warning");
+
+        if (!fileInput.value) {
+            warningText.style.display = "block";
+            event.preventDefault(); // Stop form from submitting
+        } else {
+            warningText.style.display = "none";
+        }
+    });
+</script>
+{% endblock %}

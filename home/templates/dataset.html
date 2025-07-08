@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1 class="text-center"><b>
+                            Face Detection App - DATASET
+                        </b></h1>
+                        <h6 class="text-center mt-2">Build with Django, OpenCV and VGG-19</h6>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="container-fluid">
+                        <div class="mb-3 d-flex justify-content-center">
+                            <img src="{{ image }}" class="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<script>
+    $('#fileupload').submit(function (evnt) {
+        if ($('#name').val().length <= 0) {
+            $('#name').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+        if ($('#content').val().length <= 0) {
+            $('#content').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+    });
+
+</script>
+{% endblock %}

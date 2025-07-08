@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h1 class="text-center"><b>
+                            Face Detection App - Accouracy
+                        </b></h1>
+                        <h6 class="text-center mt-2">Build with Django, OpenCV and VGG-19</h6>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-6">
+                    <div class="container-fluid">
+                        <h6 class="text-center mt-2">VGG-19 Accouracy</h6>
+                        <div class="mb-3 d-flex justify-content-center">
+                        <img src="{% static 'images/download.png' %}">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h6 class="text-center mt-2">Face and Facemask Detection</h6><br>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Method</th>
+                        <th scope="col">Classification</th>
+                        <th scope="col">Amount of Data</th>
+                        <th scope="col">Detected Images</th>
+                        <th scope="col">Accouracy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Haar Cascade</td>
+                        <td>Face</td>
+                        <td>940</td>
+                        <td>591</td>
+                        <td>62,87 %</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Haar Cascade + VGG-19</td>
+                        <td>Face</td>
+                        <td>940</td>
+                        <td>675</td>
+                        <td>71,80 %</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<script>
+    $('#fileupload').submit(function (evnt) {
+        if ($('#name').val().length <= 0) {
+            $('#name').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+        if ($('#content').val().length <= 0) {
+            $('#content').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+    });
+
+</script>
+{% endblock %}

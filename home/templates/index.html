@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h6 class="text-center mt-2"></h6>
+                    <div class="jumbotron text-center">
+                        <h1 class="display-4">Welcome To</h1>
+                        <p class="lead">Face Mask Detection App</p>
+                        <p>Face Recognition System for Haar Cascade Mask Users in the Middle of Covid-19 Social Restrictions Using VGG-19</p>
+                        <hr class="my-4">
+                        <img src="{% static 'images/result.png' %}">
+                        <!-- <a class="btn btn-primary btn-lg" href="/" role="button">About</a> -->
+                      </div>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<script>
+    $('#fileupload').submit(function (evnt) {
+        if ($('#name').val().length <= 0) {
+            $('#name').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+        if ($('#content').val().length <= 0) {
+            $('#content').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+    });
+
+</script>
+{% endblock %}

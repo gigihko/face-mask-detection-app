@@ -1,0 +1,14 @@
+
+# Ignore virtual environment
+venv/
+
+# Ignore dataset folder
+Face Mask Dataset/
+
+# Ignore specific files
+haarcascade_frontalface_default.xml
+VGG19-Face Mask Detection.h5
+
+# Ignore all files in media folder but not the folder itself
+media/*
+!.gitkeep

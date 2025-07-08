@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h6 class="text-center mt-2"></h6>
+                    <div class="jumbotron text-center">
+                        <div>
+                        <h1 class="display-4">Apa itu Haar Cascade ?</h1><br>
+                        <!-- <p class="lead">Face Mask Detection App</p> -->
+                        <p>Algoritma Haar Cascade merupakan salah satu model machine learning 
+                            yang kerap kali digunakan sebagai pondasi aplikasi object detection 
+                            (terutama face recognition), dalam sebuah gambar maupun video. 
+                            Algoritma ini lahir dari gagasan Paul Viola dan Michael Jones yang 
+                            tertuang dalam paper berjudul “ Rapid Object Detection using a Boosted 
+                            Cascade of Simple Features” (2001).</p>
+                        <hr class="my-4">
+                        <h1 class="display-4">Apa itu Deep Learning ?</h1><br>
+                        <!-- <p class="lead">Face Mask Detection App</p> -->
+                        <p>Deep learning merupakan subbidang machine learning yang algoritmanya 
+                            terinspirasi dari struktur otak manusia. Struktur tersebut dinamakan 
+                            Artificial Neural Networks atau disingkat ANN. Pada dasarnya, 
+                            ia merupakan jaringan saraf yang memiliki tiga atau lebih lapisan ANN. 
+                            Ia mampu belajar dan beradaptasi terhadap sejumlah besar data serta 
+                            menyelesaikan berbagai permasalahan yang sulit diselesaikan dengan 
+                            algoritma machine learning lainnya.</p>
+                        <hr class="my-4">
+                        <h1 class="display-4">Apa itu VGG-19 ?</h1><br>
+                        <!-- <p class="lead">Face Mask Detection App</p> -->
+                        <p>Arsitektur VGG19 merupakan arsitektur CNN yang terdiri dari 47 layer
+                             yang menggunakan konsep semakin banyak layer akurasi semakin baik. 
+                             Convolutional layer menggunakan filter 3 × 3 dengan jumlah dimensi 
+                             bertambah di setiap layer. Dimensi yang digunakan pada filter adalah
+                              3, 64, 128, 256, dan 512.</p>
+                        <!-- <a class="btn btn-primary btn-lg" href="/" role="button">About</a> -->
+                      </div>
+
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- Main row -->
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+</div>
+<script>
+    $('#fileupload').submit(function (evnt) {
+        if ($('#name').val().length <= 0) {
+            $('#name').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+        if ($('#content').val().length <= 0) {
+            $('#content').attr('style', 'border-color:red');
+            evnt.preventDefault();
+        }
+    });
+
+</script>
+{% endblock %}
